@@ -9,6 +9,8 @@
 /recovery       emmc      /dev/block/bootdevice/by-name/recovery             flags=display="Recovery";backup=1
 /boot           emmc      /dev/block/bootdevice/by-name/boot
 /misc           emmc      /dev/block/bootdevice/by-name/misc
+/efs1           emmc      /dev/block/bootdevice/by-name/modemst1             flags=display="EFS";backup=1
+/efs2           emmc      /dev/block/bootdevice/by-name/modemst2             flags=backup=1;subpartitionof=/efs1
 
 /firmware       vfat      /dev/block/bootdevice/by-name/modem                flags=display="Firmware";mounttodecrypt
 /persist        ext4      /dev/block/bootdevice/by-name/persist              flags=display="Persist";backup=1
