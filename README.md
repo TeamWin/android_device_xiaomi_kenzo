@@ -1,12 +1,22 @@
-# TWRP device tree for Redmi Note 3 (_kenzo_)
+## TWRP device tree for Xiaomi Redmi Note 3 (kenzo)
+
+Add to `.repo/local_manifests/kenzo.xml`:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<project path="device/xiaomi/kenzo" name="android_device_xiaomi_kenzo" remote="TeamWin" revision="android-7.1" />
+</manifest>
+```
+
+Then run `repo sync` to check it out.
 
 To build:
 
-```
+```sh
 . build/envsetup.sh
-lunch omni_kenzo-userdebug
-make installclean
-make recoveryimage -j(# of cores)
+lunch omni_kenzo-eng
+make -j8 recoveryimage
 ```
 
-Kernel source: https://github.com/LineageOS/android_kernel_wingtech_msm8916
+Kernel sources are available at: https://github.com/LineageOS/android_kernel_xiaomi_msm8956
