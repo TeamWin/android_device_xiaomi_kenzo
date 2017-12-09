@@ -47,6 +47,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_TREE)/recovery/root/etc/recovery.fstab
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
