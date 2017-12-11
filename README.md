@@ -1,23 +1,12 @@
-## TWRP device tree for Xiaomi Redmi Note 3 and Xiaomi Redmi Note 3 Special Edition (kenzo/kate)
+# TWRP device tree for Xiaomi Redmi Note 3 and Xiaomi Redmi Note 3 Special Edition (kenzo/kate)
 
-Add to `.repo/local_manifests/kenzo.xml`:
+How To Build
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-	<project path="device/xiaomi/kenzo" name="rn2-twrp/android_device_xiaomi_kenzo" remote="github" revision="android-8.0" />
-	<project path="kernel/xiaomi/msm8956" name="rn2-twrp/android_kernel_xiaomi_msm8956" remote="github" revision="oreo" />
-</manifest>
 ```
-
-Then run `repo sync` to check it out.
-
-To build:
-
-```sh
+mkdir -p .repo/local_manifests
+wget -O .repo/local_manifests/default.xml https://raw.githubusercontent.com/rn2-twrp/android_device_xiaomi_kenzo/android-8.0/default.xml
+repo sync --force-sync -j4
 . build/envsetup.sh
 lunch omni_kenzo-eng
-make -j8 recoveryimage
+make -j4 clobber && make -j4 recoveryimage
 ```
-
-Kernel sources are available at: https://github.com/LineageOS/android_kernel_xiaomi_msm8956
