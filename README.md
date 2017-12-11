@@ -3,10 +3,17 @@
 How To Build
 
 ```
+repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.0
+
 mkdir -p .repo/local_manifests
+
 wget -O .repo/local_manifests/default.xml https://raw.githubusercontent.com/rn2-twrp/android_device_xiaomi_kenzo/android-8.0/default.xml
+
 repo sync --force-sync -j4
+
 . build/envsetup.sh
+
 lunch omni_kenzo-eng
+
 make -j4 clobber && make -j4 recoveryimage
 ```
