@@ -75,3 +75,6 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
+
+# inherit from the proprietary version
+-include vendor/xiaomi/kenzo/BoardConfigVendor.mk
