@@ -27,7 +27,7 @@ TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
 
 # Fix for Omni 8.1.0 tree
-ALLOW_MISSING_DEPENDENCIES := true
+# ALLOW_MISSING_DEPENDENCIES := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8956
