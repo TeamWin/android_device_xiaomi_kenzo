@@ -39,7 +39,7 @@
 /syscfg          emmc     /dev/block/bootdevice/by-name/syscfg        flags=backup=1;display="Syscfg"
 /tzbak           emmc     /dev/block/bootdevice/by-name/tzbak         flags=backup=1;display="Tzbak"
 /misc            emmc     /dev/block/bootdevice/by-name/misc          flags=backup=1;display="Misc"
-/firmware        vfat     /dev/block/bootdevice/by-name/modem         flags=backup=1;display="Firmware";mounttodecrypt
+/firmware        vfat     /dev/block/bootdevice/by-name/modem         flags=backup=1;display="Firmware/Modem";mounttodecrypt
 
 # EFS Partitons
 /efs1            emmc     /dev/block/bootdevice/by-name/modemst1      flags=backup=1;display="EFS"
