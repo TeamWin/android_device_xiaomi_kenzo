@@ -14,9 +14,6 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # call the proprietary setup
 $(call inherit-product, $(VENDOR_TREE)/kenzo-vendor.mk)
 
-# call specific init
-$(call inherit-product, $(DEVICE_TREE)/init/Android.mk)
-
 PRODUCT_PACKAGES += \
 	charger_res_images \
 	charger
