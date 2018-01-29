@@ -1,7 +1,3 @@
-DEVICE_TREE := device/xiaomi/kenzo
-
-VENDOR_TREE := vendor/xiaomi/kenzo
-
 # Release name
 PRODUCT_RELEASE_NAME := kenzo
 
