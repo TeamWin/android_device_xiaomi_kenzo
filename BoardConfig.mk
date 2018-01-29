@@ -83,6 +83,3 @@ TWRP_INCLUDE_LOGCAT := true
 
 # inherit from the proprietary version
 -include $(VENDOR_TREE)/BoardConfigVendor.mk
-
-# inherit specific init
--include $(DEVICE_TREE)/init/Android.mk
