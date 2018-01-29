@@ -1,3 +1,7 @@
+DEVICE_TREE := device/xiaomi/kenzo
+
+VENDOR_TREE := vendor/xiaomi/kenzo
+
 # Release name
 PRODUCT_RELEASE_NAME := kenzo
 
@@ -8,7 +12,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/xiaomi/kenzo/kenzo-vendor.mk)
+$(call inherit-product, $(VENDOR_TREE)/kenzo-vendor.mk)
+
+# call specific init
+$(call inherit-product, $(DEVICE_TREE)/init/Android.mk)
 
 PRODUCT_PACKAGES += \
 	charger_res_images \
