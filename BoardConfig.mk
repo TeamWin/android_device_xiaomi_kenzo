@@ -1,7 +1,5 @@
 DEVICE_TREE := device/xiaomi/kenzo
 
-VENDOR_TREE := vendor/xiaomi/kenzo
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8952
 TARGET_NO_BOOTLOADER := true
@@ -82,4 +80,4 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TWRP_INCLUDE_LOGCAT := true
 
 # inherit from the proprietary version
--include $(VENDOR_TREE)/BoardConfigVendor.mk
+-include vendor/xiaomi/kenzo/BoardConfigVendor.mk
