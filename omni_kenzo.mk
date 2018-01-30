@@ -8,7 +8,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # call the proprietary setup
-$(call inherit-product, $(VENDOR_TREE)/kenzo-vendor.mk)
+$(call inherit-product, vendor/xiaomi/kenzo/kenzo-vendor.mk)
 
 PRODUCT_PACKAGES += \
 	charger_res_images \
