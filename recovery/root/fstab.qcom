@@ -3,53 +3,17 @@
 # specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
 #<src>                                              <mnt_point>  <type>  <mnt_flags and options>                                                        <fs_mgr_flags>
 
-/dev/block/bootdevice/by-name/aboot                 /aboot           emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/abootbak              /abootbak        emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/sbl1                  /sbl1            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/splash                /splash          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/sbl1bak               /sbl1bak         emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/rpm                   /rpm             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/rpmbak                /rpmbak          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/oem                   /oem             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/tz                    /tz              emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/hyp                   /hyp             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/apdp                  /apdp            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/cmnlib                /cmnlib          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/cmnlibbak             /cmnlibbak       emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/DDR                   /DDR             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/devcfg                /devcfg          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/devinfo               /devinfo         emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/dip                   /dip             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/dpo                   /dpo             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/dsp                   /dsp             ext4     nosuid,nodev,barrier=1                                                         wait
-/dev/block/bootdevice/by-name/config                /frp             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/fsc                   /fsc             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/fsg                   /fsg             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/hypbak                /hypbak          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/keymaster             /keymaster       emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/keymasterbak          /keymasterbak    emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/keystore              /keystore        emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/limits                /limits          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/mcfg                  /mcfg            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/mdtp                  /mdtp            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/mota                  /mota            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/msadp                 /msadp           emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/sec                   /sec             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/ssd                   /ssd             emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/syscfg                /syscfg          emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/tzbak                 /tzbak           emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/misc                  /misc            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/modem                 /firmware        vfat     ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337                       wait                                                    
-/dev/block/bootdevice/by-name/modemst1              /efs1            emmc     defaults                                                                       defaults
-/dev/block/bootdevice/by-name/modemst2              /efs2            emmc     defaults                                                                       defaults                                                    
-/dev/block/bootdevice/by-name/system                /system          ext4     ro,barrier=1,discard                                                           wait
-/dev/block/bootdevice/by-name/userdata              /data            ext4     nosuid,nodev,noatime,barrier=1,noauto_da_alloc                                 wait,check,encryptable=footer,formattable,length=-16384
-/dev/block/bootdevice/by-name/cache                 /cache           ext4     nosuid,nodev,noatime,barrier=1                                                 wait,check,formattable
-/dev/block/bootdevice/by-name/boot                  /boot            emmc     defaults                                                                       recoveryonly
-/dev/block/bootdevice/by-name/recovery              /recovery        emmc     defaults                                                                       recoveryonly
-/dev/block/bootdevice/by-name/persist               /persist         ext4     nosuid,nodev,barrier=1                                                         wait
-/dev/block/bootdevice/by-name/cust                  /cust            ext4     nosuid,nodev,barrier=1                                                         wait
+/dev/block/bootdevice/by-name/boot                  /boot        emmc    defaults                                                                       recoveryonly
+/dev/block/bootdevice/by-name/recovery              /recovery    emmc    defaults                                                                       recoveryonly
+/dev/block/bootdevice/by-name/system                /system      ext4    ro,barrier=1,discard                                                           wait
+/dev/block/bootdevice/by-name/userdata              /data        ext4    nosuid,nodev,noatime,barrier=1,noauto_da_alloc                                 wait,check,encryptable=footer,formattable,length=-16384
+/dev/block/bootdevice/by-name/cache                 /cache       ext4    nosuid,nodev,noatime,barrier=1                                                 wait,check,formattable
+/dev/block/bootdevice/by-name/persist               /persist     ext4    nosuid,nodev,barrier=1                                                         wait
+/dev/block/bootdevice/by-name/config                /frp         emmc    defaults                                                                       defaults
+/dev/block/bootdevice/by-name/misc                  /misc        emmc    defaults                                                                       defaults
+/dev/block/bootdevice/by-name/modem                 /firmware    vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337                       wait
+/dev/block/bootdevice/by-name/dsp                   /dsp         ext4    nosuid,nodev,barrier=1                                                         wait
 
 # SDCard
 /devices/soc.0/7864900.sdhci/mmc_host*              auto         auto    defaults                                                                       voldmanaged=sdcard1:auto,encryptable=footer
-/devices/platform/msm_hsusb_host/usb*               auto         auto    defaults                                                                       voldmanaged=usb:auto
+/devices/platform/msm_hsusb_host/usb*               auto         auto    defaults
