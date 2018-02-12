@@ -47,6 +47,7 @@
 
 # Main Partitions
 /system          ext4     /dev/block/bootdevice/by-name/system        flags=backup=1
+/system_image    emmc     /dev/block/bootdevice/by-name/system        flags=backup=1;display="System_Image"
 /data            ext4     /dev/block/bootdevice/by-name/userdata      flags=backup=1;length=-16384
 /cache           ext4     /dev/block/bootdevice/by-name/cache         flags=backup=1
 /boot            emmc     /dev/block/bootdevice/by-name/boot          flags=backup=1
