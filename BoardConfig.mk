@@ -79,5 +79,10 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
 
+# Init properties from bootloader BoardID version, ex. model info
+TARGET_INIT_VENDOR_LIB := libinit_kenzo
+TARGET_RECOVERY_DEVICE_MODULES := libinit_kenzo
+TARGET_UNIFIED_DEVICE := true
+
 # inherit from the proprietary version
 -include vendor/xiaomi/kenzo/BoardConfigVendor.mk
