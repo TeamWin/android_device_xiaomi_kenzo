@@ -83,3 +83,4 @@ TARGET_UNIFIED_DEVICE := true
 
 # inherit from the proprietary version
 -include vendor/xiaomi/kenzo/BoardConfigVendor.mk
+-include vendor/xiaomi/msm8956-common/BoardConfigVendor.mk
