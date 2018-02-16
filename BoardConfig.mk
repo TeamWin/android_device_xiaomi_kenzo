@@ -26,9 +26,6 @@ TARGET_CPU_CORTEX_A53 := true
 TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
 
-# Fix for Omni 8.1.0 tree
-# ALLOW_MISSING_DEPENDENCIES := true
-
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8956
 TARGET_KERNEL_CONFIG := kenzo_defconfig
