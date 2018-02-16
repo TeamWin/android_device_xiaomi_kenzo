@@ -44,7 +44,7 @@ void vendor_load_properties()
 
 	/* Redmi Note 3 Special Edition */
 	if ( boardID == "0" ) {
-		property_set("ro.product.model", "Redmi Note 3 Special Edition");
+		property_set("ro.product.model", "Redmi Note 3");
 		property_set("ro.product.device", "kate");
 	}
 
