@@ -33,6 +33,8 @@
 #include "property_service.h"
 #include "util.h"
 
+using android::init::property_get;
+
 void vendor_load_properties()
 {
 
