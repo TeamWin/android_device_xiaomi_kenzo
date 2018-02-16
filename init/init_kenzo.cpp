@@ -37,10 +37,13 @@
 #include "property_service.h"
 #include "log.h"
 
+namespace android {
+namespace init {
+
 void vendor_load_properties()
 {
 
-	std::string boardID = property_get("ro.boot.boardID");
+	std::string boardID = android::base::GetProperty("ro.boot.boardID");
 
 	/* Redmi Note 3 Special Edition */
 	if ( boardID == "0" ) {
@@ -54,3 +57,6 @@ void vendor_load_properties()
 		property_set("ro.product.device", "kenzo");
 	}
 }
+
+}  // namespace init
+}  // namespace android
