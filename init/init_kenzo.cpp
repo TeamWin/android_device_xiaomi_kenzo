@@ -28,6 +28,10 @@
  */
 
 #include <stdlib.h>
+#include <cstdlib>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string>
 
 #include "vendor_init.h"
 #include "property_service.h"
@@ -36,17 +40,17 @@
 void vendor_load_properties()
 {
 
-	std::string boardID = android::init::property_get("ro.boot.boardID");
+	std::string boardID = property_get("ro.boot.boardID");
 
 	/* Redmi Note 3 Special Edition */
 	if ( boardID == "0" ) {
-		android::init::property_set("ro.product.model", "Redmi Note 3 Special Edition");
-		android::init::property_set("ro.product.device", "kate");
+		property_set("ro.product.model", "Redmi Note 3 Special Edition");
+		property_set("ro.product.device", "kate");
 	}
 
 	/* default to Redmi Note 3 */
 	else {
-		android::init::property_set("ro.product.model", "Redmi Note 3");
-		android::init::property_set("ro.product.device", "kenzo");
+		property_set("ro.product.model", "Redmi Note 3");
+		property_set("ro.product.device", "kenzo");
 	}
 }
