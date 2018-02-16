@@ -9,6 +9,7 @@ $(call inherit-product, vendor/omni/config/common.mk)
 
 # call the proprietary setup
 $(call inherit-product, vendor/xiaomi/kenzo/kenzo-vendor.mk)
+$(call inherit-product, vendor/xiaomi/msm8956-common/msm8956-common-vendor.mk)
 
 PRODUCT_PACKAGES += \
 	charger_res_images \
