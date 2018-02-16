@@ -27,15 +27,15 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdlib.h>
+#include <string>
 #include <cstdlib>
 #include <unistd.h>
 #include <fcntl.h>
-#include <string>
+#include <android-base/logging.h>
+#include <android-base/properties.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
-#include "util.h"
+#include "log.h"
 
 void vendor_load_properties()
 {
