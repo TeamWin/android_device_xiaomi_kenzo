@@ -37,7 +37,7 @@
 void vendor_load_properties() {
     char rf_version[PROP_VALUE_MAX];
 
-	 android::base::GetProperty("ro.boot.boardID", boardID);
+    android::base::GetProperty("ro.boot.boardID", boardID);
 
     switch (atoi(boardID)) {
     case 0:  /* if ro.boot.boardID=0, switch to kate */
