@@ -40,7 +40,7 @@ namespace init {
 void vendor_load_properties() {
     int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
-    switch (rf_version) {
+    switch (boardID) {
     case 0:
         /* if ro.boot.boardID=0, set as kate */
         property_set("ro.product.model", "Redmi Note 3 Special Edition");
