@@ -52,10 +52,11 @@ void vendor_load_properties() {
 
     switch (boardID) {
     case 0:
-        /* kate */
+        /* if ro.boot.boardID=0, switch to kate */
         load_kate();
         break;
     default:
+        /* otherwise, load as kenzo */
         load_kenzo();
     }
 }
