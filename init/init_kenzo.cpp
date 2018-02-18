@@ -37,27 +37,17 @@
 namespace android {
 namespace init {
 
-void load_kate() {
-    property_set("ro.product.model", "Redmi Note 3 Special Edition");
-    property_set("ro.product.device", "kate");
-}
-
-void load_kenzo() {
-    property_set("ro.product.model", "Redmi Note 3");
-    property_set("ro.product.device", "kenzo");
-}
-
 void vendor_load_properties() {
     int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
     switch (boardID) {
-    case 0:
-        /* if ro.boot.boardID=0, switch to kate */
-        load_kate();
-        break;
-    default:
-        /* otherwise, load as kenzo */
-        load_kenzo();
+    case 0:  /* if ro.boot.boardID=0, switch to kate */
+            property_set("ro.product.model", "Redmi Note 3 Special Edition");
+            property_set("ro.product.device", "kate");
+            break;
+    default: /* otherwise, load as kenzo */
+            property_set("ro.product.model", "Redmi Note 3");
+            property_set("ro.product.device", "kenzo");
     }
 }
 
