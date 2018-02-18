@@ -35,7 +35,7 @@
 #include "log.h"
 
 void vendor_load_properties() {
-    char rf_version[PROP_VALUE_MAX];
+    char boardID[PROP_VALUE_MAX];
 
     android::base::GetProperty("ro.boot.boardID", boardID);
 
