@@ -34,9 +34,6 @@
 #include "property_service.h"
 #include "log.h"
 
-namespace android {
-namespace init {
-
 void vendor_load_properties() {
     int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
@@ -50,6 +47,3 @@ void vendor_load_properties() {
             property_set("ro.product.device", "kenzo");
     }
 }
-
-}  // namespace init
-}  // namespace android
