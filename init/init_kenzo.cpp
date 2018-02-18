@@ -35,7 +35,7 @@
 #include "log.h"
 
 void vendor_load_properties() {
-    int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
+    int boardID = android::base::GetProperty("ro.boot.boardID", "");
 
     switch (boardID) {
     case 0:  /* if ro.boot.boardID=0, switch to kate */
