@@ -35,9 +35,11 @@
 #include "log.h"
 
 void vendor_load_properties() {
-    int boardID = android::base::GetProperty("ro.boot.boardID", "");
+    char rf_version[PROP_VALUE_MAX];
 
-    switch (boardID) {
+	 android::base::GetProperty("ro.boot.boardID", boardID);
+
+    switch (atoi(boardID)) {
     case 0:  /* if ro.boot.boardID=0, switch to kate */
             property_set("ro.product.model", "Redmi Note 3 Special Edition");
             property_set("ro.product.device", "kate");
