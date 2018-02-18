@@ -43,7 +43,7 @@ namespace init {
 void vendor_load_properties()
 {
 
-	int boardID = android::base::GetProperty("ro.boot.boardID", "");
+	int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
 	/* Redmi Note 3 Special Edition */
 	if ( boardID == "0" ) {
