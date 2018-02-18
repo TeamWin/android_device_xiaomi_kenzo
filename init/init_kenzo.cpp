@@ -34,18 +34,24 @@
 #include "property_service.h"
 #include "log.h"
 
+namespace android {
+namespace init {
+
 void vendor_load_properties() {
-    char boardID[PROP_VALUE_MAX];
+    int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
-    android::base::GetProperty("ro.boot.boardID", boardID);
-
-    switch (atoi(boardID)) {
-    case 0:  /* if ro.boot.boardID=0, switch to kate */
-            property_set("ro.product.model", "Redmi Note 3 Special Edition");
-            property_set("ro.product.device", "kate");
-            break;
-    default: /* otherwise, load as kenzo */
-            property_set("ro.product.model", "Redmi Note 3");
-            property_set("ro.product.device", "kenzo");
+    switch (rf_version) {
+    case 0:
+        /* if ro.boot.boardID=0, set as kate */
+        property_set("ro.product.model", "Redmi Note 3 Special Edition");
+        property_set("ro.product.device", "kate");
+        break;    
+    default:
+        /* otherwise, set as kenzo */
+        property_set("ro.product.model", "Redmi Note 3");
+        property_set("ro.product.device", "kenzo");
     }
 }
+
+}  // namespace init
+}  // namespace android
