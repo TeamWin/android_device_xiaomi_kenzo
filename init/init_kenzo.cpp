@@ -1,6 +1,5 @@
 /*
-   Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
-
+   Copyright (C) 2017-2018 The Android Open Source Project
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -27,7 +25,6 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <string>
 #include <cstdlib>
 #include <unistd.h>
 #include <fcntl.h>
@@ -40,22 +37,27 @@
 namespace android {
 namespace init {
 
-void vendor_load_properties()
-{
+void load_kate() {
+    property_set("ro.product.model", "Redmi Note 3 Special Edition");
+    property_set("ro.product.device", "kate");
+}
 
-	int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
+void load_kenzo() {
+    property_set("ro.product.model", "Redmi Note 3");
+    property_set("ro.product.device", "kenzo");
+}
 
-	/* Redmi Note 3 Special Edition */
-	if ( boardID == "0" ) {
-		property_set("ro.product.model", "Redmi Note 3 Special Edition");
-		property_set("ro.product.device", "kate");
-	}
+void vendor_load_properties() {
+    int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
-	/* default to Redmi Note 3 */
-	else {
-		property_set("ro.product.model", "Redmi Note 3");
-		property_set("ro.product.device", "kenzo");
-	}
+    switch (boardID) {
+    case 0:
+        /* kate */
+        load_kate();
+        break;
+    default:
+        load_kenzo();
+    }
 }
 
 }  // namespace init
