@@ -1,6 +1,5 @@
 /*
-   Copyright (c) 2013, The Linux Foundation. All rights reserved.
-
+   Copyright (C) 2017-2018 The Android Open Source Project
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -27,26 +25,33 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
+#include <unistd.h>
+#include <fcntl.h>
+#include <android-base/logging.h>
+#include <android-base/properties.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
-#include "util.h"
+#include "log.h"
 
-void vendor_load_properties()
-{
+namespace android {
+namespace init {
 
-	std::string boardID = property_get("ro.boot.boardID");
+void vendor_load_properties() {
+    int boardID = stoi(android::base::GetProperty("ro.boot.boardID", ""));
 
-	/* Redmi Note 3 Special Edition */
-	if ( boardID == "0" ) {
-		property_set("ro.product.model", "Redmi Note 3 Special Edition");
-		property_set("ro.product.device", "kate");
-	}
-
-	/* default to Redmi Note 3 */
-	else {
-		property_set("ro.product.model", "Redmi Note 3");
-		property_set("ro.product.device", "kenzo");
-	}
+    switch (boardID) {
+    case 0:
+        /* if ro.boot.boardID=0, set as kate */
+        android::base::SetProperty("ro.product.model", "Redmi Note 3 Special Edition");
+        android::base::SetProperty("ro.product.device", "kate");
+        break;    
+    default:
+        /* otherwise, set as kenzo */
+        android::base::SetProperty("ro.product.model", "Redmi Note 3");
+        android::base::SetProperty("ro.product.device", "kenzo");
+    }
 }
+
+}  // namespace init
+}  // namespace android
