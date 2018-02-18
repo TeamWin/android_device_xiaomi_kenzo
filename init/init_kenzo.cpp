@@ -43,13 +43,13 @@ void vendor_load_properties() {
     switch (boardID) {
     case 0:
         /* if ro.boot.boardID=0, set as kate */
-        property_set("ro.product.model", "Redmi Note 3 Special Edition");
-        property_set("ro.product.device", "kate");
+        android::base::SetProperty("ro.product.model", "Redmi Note 3 Special Edition");
+        android::base::SetProperty("ro.product.device", "kate");
         break;    
     default:
         /* otherwise, set as kenzo */
-        property_set("ro.product.model", "Redmi Note 3");
-        property_set("ro.product.device", "kenzo");
+        android::base::SetProperty("ro.product.model", "Redmi Note 3");
+        android::base::SetProperty("ro.product.device", "kenzo");
     }
 }
 
